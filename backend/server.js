@@ -30,8 +30,10 @@ if (process.env.NODE_ENV === "production") {
   const distPath = path.join(__dirname, "/frontend/dist");
   console.log("Serving static files from: ", distPath);
 
+  app.use(express.static(distPath));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(distPath, "index.html"));
   });
 }
 
