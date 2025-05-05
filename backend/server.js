@@ -27,7 +27,7 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  const distPath = path.join(__dirname, "../frontend/dist");
+  const distPath = path.join(__dirname, "/frontend/dist");
   console.log("Serving static files from: ", distPath);
 
   app.get("*", (req, res) => {
